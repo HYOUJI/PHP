@@ -1,0 +1,66 @@
+package com.example.b106_10.ex4_8;
+
+import android.app.ActionBar;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+import android.support.v7.app.ActionBarActivity;
+
+public class MainActivity extends ActionBarActivity {
+
+
+
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        setTitle("연습문제 4-8 / 1294045 / 함성호");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_launcher);
+        final EditText edit1=(EditText) findViewById(R.id.edit1);
+
+
+
+        edit1.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                String str = edit1.getText().toString();
+                Toast tsm = Toast.makeText(MainActivity.this,str,Toast.LENGTH_SHORT);
+                tsm.show();
+
+
+                return false;
+
+            }
+        });
+
+    }
+
+
+
+
+}
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+   <EditText
+       android:id="@+id/edit1"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:textSize="10dp"
+       android:inputType="text"
+       android:visibility="visible"
+       />
+
+
+</LinearLayout>
+
+ compile "com.android.support:appcompat-v7:23.0.+"
