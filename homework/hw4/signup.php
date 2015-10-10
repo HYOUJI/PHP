@@ -31,6 +31,16 @@
 		else {
 			# 다 입력했을 경우, name 과 email 의 유효성 검사.
 			# 유효하지 않을 경우 경고메세지.
+			if( !preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email) ||
+				!preg_match("/^[a-zA-Z ]*$/", $name)){
+				echo "<h1>Sorry</h1>";
+				echo "You didn't provide a e-mail address or name. ";
+				echo "<a href='$_SERVER[HTTP_REFERER]'>Try again?</a>";
+				$new = false;
+			}
+
+
+			# $list 배열에 " : " 로 $name, $email, $interest, $gender 저장.
 			foreach( $list as $user ){
 				list( $username, $useremail, $userinterest, $usergender ) = explode(" : ", $user);
 				
@@ -64,10 +74,9 @@
 
 				$readtxt = fopen("list.txt", "r") or die ("No");
 				while(!feof($readtxt)){
-					echo fgets($readtxt)."<br>";
+					echo "<b>".fgets($readtxt)."</b><br>";
 				}
 				fclose($myfile);
-
 			}
 
 		}
