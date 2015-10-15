@@ -1,20 +1,28 @@
 <?php
 require("todolist.php");
+
 $todotext = $_POST['item'];
-$deletetext = $_POST['line'];
+$temp = $_POST['action'];
+$num_del = $_POST['line'];
 
-if( isset($tlist)) {
-   file_put_contents($tlist,$line_no.$todotext."\n", FILE_APPEND);
+if($temp == "add"){
+	if( isset($tlist)) {
+	   file_put_contents($tlist,$todotext."\n", FILE_APPEND);
+	}
+	else {
+	  file_put_contents($tlist,$todotext, FILE_APPEND);
+	}
+}
+else if($temp == "delete"){
+	array_splice($listarray, $num_del, 1);
 
-} else {
-   file_put_contents($tlist, $line_no.$todotext, FILE_APPEND);
-
+	$myfile = fopen($tlist,"w") or die("Error!!");
+	fclose($myfile);
+	 for($i = 0;$i <count($listarray)-1;$i++)
+	 {
+	 	file_put_contents($tlist,$listarray[$i]."\n", FILE_APPEND);
+	 } 
 }
 
-	if( isset($deletetext) ){
-		array_splice($listarray, $line_no, 1);
-		$listarray = explode("\n", file_get_contents($tlist));
-	}
 header("Location: todolist.php");
-/*<?php require("common.php"); ?>*/
 ?>

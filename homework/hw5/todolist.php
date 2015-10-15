@@ -21,14 +21,13 @@
 			<h2><?php echo $loginuser; ?>'s To-Do List</h2>
 
 			<ul id="todolist">
-				<?php 
-				//$todolist = fopen("$loginuser.txt", "a") or die("Unableto open file!");
+				<?php 				
 				$tlist = "$loginuser.txt";
 				$listarray = explode("\n", file_get_contents($tlist));
 				for($line_no = 0; $line_no < count($listarray)-1; $line_no ++)
 				{
 				?>
-				<li>
+				<li>					
 					<?php echo $listarray[$line_no]; ?>
 					<form action="submit.php" method="post">
 						<input type="hidden" name="action" value="delete" />
