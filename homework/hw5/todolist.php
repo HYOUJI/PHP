@@ -6,11 +6,8 @@
 		<link href="todolist.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
-
 		<?php
-		
-		//$add = $_POST[""];
-		//$line_no = "";
+		$loginuser = $_SESSION['login'];
 		?>
 
 		<div class="headfoot">
@@ -21,25 +18,25 @@
 		</div>
 
 		<div id="main">
-			<h2>one's To-Do List</h2>
+			<h2><?php echo $loginuser; ?>'s To-Do List</h2>
 
 			<ul id="todolist">
+				<?php 
+				//$todolist = fopen("$loginuser.txt", "a") or die("Unableto open file!");
+				$tlist = "$loginuser.txt";
+				$listarray = explode("\n", file_get_contents($tlist));
+				for($line_no = 0; $line_no < count($listarray)-1; $line_no ++)
+				{
+				?>
 				<li>
-					php homework
+					<?php echo $listarray[$line_no]; ?>
 					<form action="submit.php" method="post">
 						<input type="hidden" name="action" value="delete" />
 						<input type="hidden" name="line" value="<?=$line_no?>" />
 						<input type="submit" name="submit" value="delete" />
-					</form>
+					</form>					
 				</li>
-				<li>
-					jsp homework
-					<form action="submit.php" method="post">
-						<input type="hidden" name="action" value="delete" />
-						<input type="hidden" name="line" value="<?=$line_no?>" />
-						<input type="submit" name="submit" value="delete" />
-					</form>
-				</li>
+				<?php } ?>
 						
 				<li>
 					<form action="submit.php" method="post">
@@ -62,7 +59,6 @@
 				<q>Remember What-To-Do is nice, but it's a total copy of another site "Remember the Milk".</q> - PCWorld<br />
 				All pages and content &copy; Copyright What-To-Do Inc.
 			</p>
-		</div>
-
+		</div>		
 	</body>
 </html>
