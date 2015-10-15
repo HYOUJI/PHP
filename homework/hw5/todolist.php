@@ -1,3 +1,4 @@
+<?php require("common.php"); ?>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -7,10 +8,9 @@
 	<body>
 
 		<?php
+		
 		//$add = $_POST[""];
 		//$line_no = "";
-
-
 		?>
 
 		<div class="headfoot">
@@ -52,7 +52,7 @@
 
 			<div>
 				<a href="logout.php"><strong>Log Out</strong></a>
-				<em>(logged in since <?php echo date("F d, Y, h:i:s:a"); ?>)</em>
+				<em>(logged in since<?php echo $_SESSION["begin"];?>)</em> 
 			</div>
 
 		</div>

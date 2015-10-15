@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_decode();
+session_destroy();
 header("Location: start.php");
-
 ?>
