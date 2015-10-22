@@ -6,7 +6,7 @@
 1. 사용자 입력을 받아 PHP echo 문으로 표시하는 간단한 HTML form 을 작성하시오.<p>
 	<form method="GET" action="<?=$_SERVER['PHP_SELF']?>">
 	<b>Please input your name : </b><p>
-	<input type="text" name="name">
+	<input type="text" name="name" maxlength="10">
 	<input type="submit" name="submit1" value="Submit"><br>
 	</form>
 	<?php
@@ -36,7 +36,7 @@
 	?>
 	</table><p>
 
-3. 다음의 코드는, 텍스트 파일("names.txt")에서 특정 문자를 특정 개수 가진 것을 찾아 내는 코드입니다. 빈 칸을 완성하시오.
+3. 다음의 코드는, 텍스트 파일("names.txt")에서 특정 문자를 특정 개수 가진 것을 찾아 내는 코드입니다. 빈 칸을 완성하시오.<p>
 	<b>names.txt</b><p>	
 	<?php
 		$nametxt = "names.txt";
@@ -78,7 +78,7 @@
 				}
 			}
 			# $count가 $times 보다 같거나 큰 지를 확인.
-			if($count <= $times){
+			if($count >= $times){
 				$matches ++;
 	?>
 	<p><b><?=$line?></b>
