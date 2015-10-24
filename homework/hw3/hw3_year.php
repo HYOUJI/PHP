@@ -9,8 +9,8 @@
 	#개강날짜와 종강날짜 설정.
 	$startclass = strtotime("Sep 1");
 	$endclass = strtotime("+15 weeks", $startclass);
-	echo "개강은 <b>".date("M d D", $startclass)."</b> 입니다.<br>";
-	echo "종강은 <b>".date("M d D", $endclass)."</b> 입니다.<br>";
+	echo "개강은 <b>".date("M d l", $startclass)."</b> 입니다.<br>";
+	echo "종강은 <b>".date("M d l", $endclass)."</b> 입니다.<br>";
 	echo "<h3>[Server Web Programming 수업 날짜]</h3>";
 	
 	#월요일, 수요일을 변수에 저장.
