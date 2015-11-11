@@ -27,7 +27,7 @@ if(isset($_COOKIE["username2"])) {
 	$username2 = $_COOKIE["username2"];
 }
 else {
-	$username2 = "Guset";
+	$username2 = "Guest";
 }
 
 if( !isset($_COOKIE["visits"])) {

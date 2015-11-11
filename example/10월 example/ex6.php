@@ -175,7 +175,7 @@
 			}
 			else{
 				echo $extension."format file is not allowed to upload! ";
-				echo ($size/10244)." Kbyte is bigger than 700 Kb";
+				echo ($size/1024)." Kbyte is bigger than 700 Kb";
 			}
 	}
 	else{
