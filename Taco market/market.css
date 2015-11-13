@@ -1,0 +1,65 @@
+body, input, select, option, button, a {
+	/*color: #276021;*/
+	color: #477500;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+}
+
+body, h1 {
+	color: #22741C;
+	margin: 0;
+	padding: 0;
+}
+
+#error {
+	background-color: #ffdddd;
+	border: 1px dotted red;
+	color: red;
+	font-weight: bold;
+	padding: 0.5em;
+}
+
+.headfoot {
+	background-color: #FFFFFF;
+	color: black;
+	padding: 0.5em;
+}
+
+.tailfoot {
+	background-color: #EBFFEB;
+	color: black;
+	padding: 0.5em;
+}
+
+
+
+h1 img {
+	float: left;
+	margin-right: 1em;
+}
+
+li {
+	margin-bottom: 0.5em;
+	width: 20em;
+}
+
+li form input[type="submit"] {
+	float: right;
+	margin-left: 1em;
+}
+
+#main {
+	margin: 2em;
+}
+
+#todolist form {
+    display: inline;
+}
+
+#todolist li {
+	clear: right;
+}
+
+hr {    
+    border: 3px solid #22741C;
+}
