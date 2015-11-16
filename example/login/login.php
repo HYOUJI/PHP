@@ -9,21 +9,28 @@ $user = $_POST["user"];
 $pass = $_POST["pass"];
 
 
-// session_start();
+// Check user and password in the file "users.txt"
 
 $granted = false; // 일단은 아무것도 허용된게 없으므로 false...
 $userfile = "users.txt";
 $users = explode("\n", file_get_contents($userfile));
 foreach($users as $each){
-	$info = explode(" : ", $each);
+	$info = explode(":", $each);
 	if( $user == trim($info[0]) && $pass == trim($info[1]) ){
 		$granted = true;
 		break;
 	}
 }
 
-echo $user." : ". $pass. " has been ". $granted;
-//if( checkUser( ))
+session_start();
+
+if($granted) {
+	$_SESSION["login"] = $user;
+	header("Location: page-1.php");
+}
+else{
+	header("Location: front.php");
+}
 
 
 ?>
