@@ -31,8 +31,6 @@ body, h1 {
 	padding: 0.5em;
 }
 
-
-
 h1 img {
 	float: left;
 	margin-right: 1em;
@@ -62,4 +60,8 @@ li form input[type="submit"] {
 
 hr {    
     border: 3px solid #22741C;
+}
+
+.hr{
+	border: 3px solid #22741C;
 }

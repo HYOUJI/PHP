@@ -26,9 +26,40 @@
 			</p>
 
 			<form id="loginform" action="login.php" method="post">
-				<div><strong>ID<?php for($i=1;$i<=15;$i++) { echo"&nbsp;";}?></strong><input name="name" type="text" size="8" autofocus="autofocus" /></div>
-				<div><strong>Password&nbsp;</strong><input name="password" type="password" size="8" /></div>
-				<div><input type="submit" value="Log in" /></div>
+			<table border="2">
+				<div>
+				<tr>
+					<th colspan="2">Login</th>
+				</tr>
+				<tr>
+					<td>
+						<strong>ID</strong>
+					</td>
+					<td>
+						<input name="name" type="text" size="8" autofocus="autofocus" />
+					</td>
+				</tr>
+				</div>
+				<div>
+				<tr>
+					<td>
+						<strong>Password</strong>
+					</td>
+					<td>
+						<input name="password" type="password" size="8" />
+					</td>
+				</tr>
+				</div>
+				<div>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="Log in" />
+					</td>
+				</tr>
+				</div>
+			</table>
+			<hr>
+			If you don't have an account click <b><a href="signup.php">Sign up</a></b>
 			</form>
 		
 		</div>
